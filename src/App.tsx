@@ -1,26 +1,58 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useState, FormEvent } from "react";
+import { useForm } from './Hooks/useForm';
+import { Anime } from "./Interfaces";
 
-function App() {
+const App = (): JSX.Element => {
+
+  const { formValues, handleInputChange, reset } = useForm<Anime>({});
+  
+  const [ animes, setAnimes ] = useState<Anime[]>([]);
+  const { title } = formValues;
+
+  const handleSubmit = (event: FormEvent<HTMLFormElement>): void => {
+    event.preventDefault();
+    setAnimes([
+      ...animes,
+      {
+        id: animes.length + 1,
+        title
+      }
+    ])
+    reset();
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <h1 className="text-center text-primary display-1">ReactJs</h1>
+      <hr />
+
+      <form onSubmit={ handleSubmit }>
+        <input
+          id="title"
+          className="form-control mb-4"
+          type="text"
+          name="title"
+          placeholder="anime title"
+          onChange={ handleInputChange }
+          value={ title ?? "" }
+        />
+        
+        <div className="d-grid">
+          <button
+            id="submitBtn"
+            type="submit"
+            className="btn btn-primary"
+          >Add</button>
+        </div>
+      </form>
+
+      <ul className="mt-5">
+        {animes.map((anime) => (
+          <li key={anime.id}>{anime?.title?.toUpperCase()}</li>
+        ))}
+      </ul>
+    </>
   );
-}
+};
 
 export default App;
