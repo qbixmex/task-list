@@ -10,7 +10,7 @@ export const useForm = <T>(initialState: T) => {
       ...formValues,
       [ name ]: value
     });
-  }
+  };
 
   const reset = ( newState = initialState ) => {
     setFormValues( newState );

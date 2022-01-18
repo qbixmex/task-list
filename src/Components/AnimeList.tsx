@@ -1,8 +1,8 @@
 import { useState, FormEvent } from "react";
-import { useForm } from './Hooks/useForm';
-import { Anime } from "./Interfaces";
+import { useForm } from "../Hooks/useForm";
+import { Anime } from "../Interfaces";
 
-const App = (): JSX.Element => {
+const AnimeList = (): JSX.Element => {
 
   const { formValues, handleInputChange, reset } = useForm<Anime>({});
   
@@ -55,4 +55,4 @@ const App = (): JSX.Element => {
   );
 };
 
-export default App;
+export default AnimeList;

@@ -3,3 +3,17 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.blue   { color: var(--bs-blue); }
+.indigo { color: var(--bs-indigo); }
+.purple { color: var(--bs-purple); }
+.pink   { color: var(--bs-pink); }
+.red    { color: var(--bs-red); }
+.orange { color: var(--bs-orange); }
+.yellow { color: var(--bs-yellow); }
+.green  { color: var(--bs-green); }
+.teal   { color: var(--bs-teal); }
+.cyan   { color: var(--bs-cyan); }
+.white  { color: var(--bs-white); }
+.gray   { color: var(--bs-gray); }
+.dark   { color: var(--bs-gray-dark); }
