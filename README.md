@@ -8,7 +8,7 @@ After you download this script you can trigger the following instructions.
 ### `yarn start`
 
 This opens local server to:
-[http://localhost:3000](http://localhost:3000) to view it in the browser.
+[http://localhost:3000](https://agitated-poitras-1f9584.netlify.app) to view it in the browser.
 
 The page will reload if you save any file.
 You will also can watch any lint errors in the console.
